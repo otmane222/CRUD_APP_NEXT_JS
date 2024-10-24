@@ -4,7 +4,7 @@
   "private": true,
   "scripts": {
     "dev": "concurrently \"npm run prisma\" \"next dev\"",
-    "prisma": "npx prisma generate && npx prisma migrate dev",
+    "prisma": "npx prisma generate && npx prisma migrate dev --name test",
     "build": "next build",
     "start": "next start",
     "lint": "next lint"
