@@ -1,11 +1,24 @@
+// app/page.tsx
+// import prisma from '@/lib/prisma';
+// import BlogPosts from '@/components/BlogPosts';
+import Link from 'next/link';
 
-export default function Home() {
-
+const Home = async () => {
+  // const posts = await prisma.post.findMany();
 
   return (
-    <div className="grid grid-rows-[20px_1fr_20px] items-center justify-items-center min-h-screen p-8 pb-20 gap-16 sm:p-20 font-[family-name:var(--font-geist-sans)]">
-      <h1 className="text-[40px]">Home</h1>
-      
+    <div className='flex w-full h-[150px] items-center justify-center'>
+
+      <Link
+            href="/posts"
+            className=" bg-slate-400 rounded-[5px] p-[20px]"
+            >
+      Go To posts
+      </Link>
     </div>
   );
-}
+};
+
+export default Home;
+
+
