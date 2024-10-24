@@ -3,7 +3,8 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
-    "dev": "next dev",
+    "dev": "concurrently \"npm run prisma\" \"next dev\"",
+    "prisma": "npx prisma generate && npx prisma migrate dev",
     "build": "next build",
     "start": "next start",
     "lint": "next lint"
@@ -14,6 +15,7 @@
     "@prisma/client": "^5.21.1",
     "@tailwindcss/line-clamp": "^0.4.4",
     "clsx": "^2.1.1",
+    "concurrently": "^7.0.0",
     "dotenv": "^16.4.5",
     "next": "latest",
     "react": "latest",
