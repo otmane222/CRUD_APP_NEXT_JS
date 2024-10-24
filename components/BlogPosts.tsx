@@ -3,6 +3,7 @@ import Link from "next/link";
 interface Post {
     id: number;
     title: string;
+    bio: string;
     content: string | null;
 }
 
