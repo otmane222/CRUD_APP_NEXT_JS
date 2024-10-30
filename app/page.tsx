@@ -1,4 +1,3 @@
-// app/page.tsx
 // import prisma from '@/lib/prisma';
 // import BlogPosts from '@/components/BlogPosts';
 import Link from 'next/link';

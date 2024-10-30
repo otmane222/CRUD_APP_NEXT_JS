@@ -1,5 +1,4 @@
-// app/posts/[id]/PostPage.tsx
-'use client'; // This line makes the component a Client Component
+'use client';
 
 import Link from 'next/link';
 import { useRouter } from 'next/navigation';
@@ -29,7 +28,7 @@ const PostPage = ({ post }: PostPageProps) => {
                 });
 
                 if (response.ok) {
-                    router.push('/posts'); // Redirect to posts list
+                    router.push('/posts');
                 } else {
                     throw new Error('Failed to delete post');
                 }

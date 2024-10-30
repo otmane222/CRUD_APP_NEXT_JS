@@ -1,18 +1,17 @@
-// app/posts/[id]/edit/page.tsx
+
 'use client'
-// app/posts/[id]/edit/page.tsx
 import { useEffect, useState } from 'react';
 import { useRouter } from 'next/navigation';
-import React from 'react'; // Ensure React is imported
+import React from 'react';
 
 interface EditPostPageProps {
     params: {
-        id: string; // The id will be a string
+        id: string;
     };
 }
 
 const EditPostPage = ({ params }: EditPostPageProps) => {
-    const { id } = React.use(params); // Use React.use() to unwrap params
+    const { id } = React.use(params);
     const [post, setPost] = useState({ title: '', content: '' });
     const [loading, setLoading] = useState(true);
     const router = useRouter();
@@ -36,7 +35,7 @@ const EditPostPage = ({ params }: EditPostPageProps) => {
     const handleSubmit = async (e) => {
         e.preventDefault();
         const response = await fetch(`/api/posts/${id}`, {
-            method: 'PUT', // Ensure this matches your API setup
+            method: 'PUT',
             headers: {
                 'Content-Type': 'application/json',
             },
@@ -44,7 +43,7 @@ const EditPostPage = ({ params }: EditPostPageProps) => {
         });
 
         if (response.ok) {
-            router.push(`/posts/${id}`); // Redirect to the post page after editing
+            router.push(`/posts/${id}`);
         } else {
             console.error('Failed to update post');
         }

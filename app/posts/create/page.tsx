@@ -2,12 +2,10 @@
 import { useState, ChangeEvent, FormEvent } from 'react';
 
 const CreatePost = () => {
-// Define state types
 const [title, setTitle] = useState<string>('');
 const [bio, setBio] = useState<string>('');
 const [content, setContent] = useState<string>('');
 
-// Handle form submission
 const handleSubmit = async (e: FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     if (title.length > 40) {
@@ -64,10 +62,10 @@ return (
             id="title"
             value={title}
             onChange={handleTitleChange}
-            maxLength={100} // Frontend limit for title
+            maxLength={100}
             required
             className='p-[15px] h-[40px] w-[80%] rounded-[5px]'
-            // style={{ padding: '15px', height: '180px', borderRadius: '5px' }}
+        
             />
         </div>
 
@@ -78,10 +76,10 @@ return (
             value={bio}
             onChange={(e) => {
                 handleBioChange(e);
-                e.target.style.height = 'auto'; // Reset height to auto to calculate new height
-                e.target.style.height = `${e.target.scrollHeight}px`; // Set the height to the scrollHeight
+                e.target.style.height = 'auto';
+                e.target.style.height = `${e.target.scrollHeight}px`;
             }}
-            maxLength={255} // Frontend limit for bio
+            maxLength={255}
             required
             className='p-[15px] w-[80%] h-[90px] rounded-[5px]'
             />
@@ -93,10 +91,10 @@ return (
             value={content}
             onChange={(e) => {
                 handleContentChange(e);
-                e.target.style.height = 'auto'; // Reset height to auto to calculate new height
-                e.target.style.height = `${e.target.scrollHeight}px`; // Set the height to the scrollHeight
+                e.target.style.height = 'auto';
+                e.target.style.height = `${e.target.scrollHeight}px`;
             }}
-            maxLength={255} // textFrontend limit for bio
+            maxLength={255}
             required
             className='p-[15px] w-[80%] h-[100px] rounded-[5px]'
             />
