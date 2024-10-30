@@ -45,7 +45,8 @@ const EditPostPage = ({ params }: EditPostPageProps) => {
         if (response.ok) {
             router.push(`/posts/${id}`);
         } else {
-            console.error('Failed to update post');
+            const errorData = await response.json();
+            alert(`Error: ${errorData.error}`);
         }
     };
 

@@ -8,13 +8,13 @@ const [content, setContent] = useState<string>('');
 
 const handleSubmit = async (e: FormEvent<HTMLFormElement>) => {
     e.preventDefault();
-    if (title.length > 40) {
-        alert("Title must be 100 characters or less");
+    if (title.length > 50) {
+        alert("Title must be 50 characters or less");
         return;
     }
 
-    if (bio.length > 100) {
-        alert("Bio must be 255 characters or less");
+    if (bio.length > 110) {
+        alert("Bio must be 110 characters or less");
         return;
     }
 

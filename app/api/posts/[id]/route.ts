@@ -31,6 +31,22 @@ export async function PUT(request: Request, { params }: { params: { id: string }
             where: { id: parseInt(id, 10) },
             data: { title, bio, content },
         });
+        if (title.length > 100) {
+        return NextResponse.json({ error: 'Title must be 100 characters or less' }, { status: 400 });
+        }
+        if (title.length < 3) {
+        return NextResponse.json({ error: 'Title must be 3 characters or more' }, { status: 400 });
+        }
+    
+        if (bio.length > 110) {
+            return NextResponse.json({ error: 'Bio must be 110 characters or less' }, { status: 400 });
+        }
+        if (bio.length < 10) {
+            return NextResponse.json({ error: 'Bio must be 10 characters or more' }, { status: 400 });
+        }
+        if (content.length < 50) {
+            return NextResponse.json({ error: `content must be 50 characters or more , num of your char[${content.length}]` }, { status: 400 });
+        }
 
         return NextResponse.json(updatedPost, { status: 200 });
     } catch (error) {
